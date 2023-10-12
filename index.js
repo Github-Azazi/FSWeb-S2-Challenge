@@ -202,18 +202,15 @@ console.log(manav)
  */
 let atilanMesaj = "Selam :) Nasılsın :D Bugünkü olay çok komikti :P ama sonra çok şaşırdık :o biraz da üzüldük :( ama yine de seviliyorsun <3"
 
-function emojileriDonustur(atilanMesaj, emojiler) {
-  for (let atilanMesaj in emojiler) {
-   // let atilanMesaj = emojiler[sembol];
-    atilanMesaj.replaceAll(atilanMesaj.toLowerCase());
+function emojileriDonustur(mesaj, emojiler) {
+  for (let sembol in emojiler) {
+    mesaj = mesaj.replaceAll(sembol.toLowerCase(), emojiler[sembol]);
+    mesaj = mesaj.replaceAll(sembol.toUpperCase(), emojiler[sembol]);
   }
-  return atilanMesaj;
+  return mesaj;
 }
 
-//let donusturulmusMesaj = emojileriDonustur(atilanMesaj, emojiler);
-
-console.log(emojileriDonustur(atilanMesaj));
-
+console.log(emojileriDonustur(atilanMesaj, emojiler));
 
 
 
